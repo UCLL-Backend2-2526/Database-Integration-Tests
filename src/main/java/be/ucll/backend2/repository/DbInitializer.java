@@ -3,14 +3,12 @@ package be.ucll.backend2.repository;
 import be.ucll.backend2.model.Actor;
 import be.ucll.backend2.model.Movie;
 import jakarta.annotation.PostConstruct;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("!prod")
 public class DbInitializer {
-    private ActorRepository actorRepository;
-    private MovieRepository movieRepository;
+    private final ActorRepository actorRepository;
+    private final MovieRepository movieRepository;
 
     public DbInitializer(ActorRepository actorRepository, MovieRepository movieRepository) {
         this.actorRepository = actorRepository;
